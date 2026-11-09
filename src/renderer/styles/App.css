@@ -1,0 +1,112 @@
+* {
+  margin: 0px;
+  padding: 0px;
+}
+
+body {
+  width: 100vw;
+  height: 100vh;
+  overflow: hidden;
+  font-family: 'Oxanium', monospace;
+}
+
+.main {
+  display: flex;
+  flex-direction: column;
+  justify-content: center;
+  align-items: center;
+  height: calc(100vh);
+  width: 100vw;
+  background-color: #000000;
+  color: white;
+  position: relative;
+}
+.main img {
+  position: absolute;
+  bottom: 100px;
+  user-select: none;
+  width: 100%;
+}
+.main h1 {
+  font-weight: bold;
+  font-size: 50px;
+  font-family: 'Outfit';
+  background-image: linear-gradient(90deg, #3df39b 50%, #7e63dd);
+  -webkit-background-clip: text; /* For Safari and Chrome */
+  -webkit-text-fill-color: transparent; /* Make text fill transparent to show gradient */
+  background-clip: text; /* For other browsers */
+  color: transparent; /* Fallback for unsupported browsers */
+}
+.main p {
+  background-image: linear-gradient(
+    90deg,
+    #00ffc0 -10%,
+    #fff 10%,
+    #fff 90%,
+    #7e63dd 95%
+  );
+  -webkit-background-clip: text; /* For Safari and Chrome */
+  -webkit-text-fill-color: transparent; /* Make text fill transparent to show gradient */
+  background-clip: text; /* For other browsers */
+  color: transparent; /* Fallback for unsupported browsers */
+  margin-top: 10px;
+  font-size: 20px;
+}
+.content {
+  z-index: 10;
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+  justify-content: center;
+  user-select: none;
+}
+
+.content .btnCont {
+  display: flex;
+}
+
+.content button {
+  margin-top: 40px;
+  background-image: linear-gradient(90deg, #08bc96, #3ff496);
+  box-shadow: 0px 0px 10px 0px rgba(63, 244, 151, 0.5);
+  padding: 0.5em 0.5em 0.5em 1.3em;
+  outline: none;
+  border: none;
+  cursor: pointer;
+  border-radius: 30px;
+  font-size: medium;
+  font-size: 19px;
+  font-family: 'Oxanium', monospace;
+  font-weight: 600;
+  transition: all 200ms ease-out;
+  display: flex;
+  align-items: center;
+}
+.content button:hover {
+  transform: scale(1.05);
+}
+
+.particles-js {
+  z-index: -10;
+}
+.particles-js-canvas-el {
+  position: absolute;
+  top: 0px;
+  left: 0px;
+  width: 100vw !important;
+  height: 100vh !important;
+}
+
+#startIcon {
+  margin-left: 20px;
+  padding: 10px;
+  background-color: rgb(0, 0, 0);
+  color: white;
+  border-radius: 50%;
+}
+
+.title_bar {
+  height: 35px;
+  width: 100vw;
+  background-color: red;
+}

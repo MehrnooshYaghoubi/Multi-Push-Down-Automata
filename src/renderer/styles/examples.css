@@ -1,0 +1,116 @@
+/* The example-library overlay. Uses the same palette as the rest of the app:
+   black background, #3ff496 green accent, #7e63dd violet. */
+
+.examples-overlay {
+  position: fixed;
+  inset: 0;
+  z-index: 100;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  background-color: rgba(0, 0, 0, 0.72);
+  backdrop-filter: blur(4px);
+  font-family: 'Oxanium', monospace;
+}
+
+.examples-panel {
+  width: min(760px, 86vw);
+  max-height: 72vh;
+  display: flex;
+  flex-direction: column;
+  background-color: rgba(18, 18, 18, 0.95);
+  border: 2px solid rgba(77, 77, 77, 0.6);
+  border-radius: 14px;
+  box-shadow: 0 0 40px 0 rgba(0, 0, 0, 0.6);
+  color: white;
+  overflow: hidden;
+}
+
+.examples-panel header {
+  display: flex;
+  align-items: center;
+  justify-content: space-between;
+  padding: 1.1em 1.3em;
+  border-bottom: 2px solid rgba(77, 77, 77, 0.4);
+}
+
+.examples-panel header h3 {
+  font-family: 'Outfit', sans-serif;
+  font-size: 22px;
+  background-image: linear-gradient(90deg, #3df39b 40%, #7e63dd);
+  -webkit-background-clip: text;
+  background-clip: text;
+  -webkit-text-fill-color: transparent;
+  color: transparent;
+}
+
+.examples-panel header button {
+  background: none;
+  border: none;
+  color: #9a9a9a;
+  cursor: pointer;
+  font-size: 22px;
+  display: flex;
+  align-items: center;
+}
+
+.examples-panel header button:hover {
+  color: #3ff496;
+}
+
+.examples-list {
+  overflow-y: auto;
+  padding: 0.6em;
+}
+
+.examples-list::-webkit-scrollbar {
+  display: none;
+}
+
+.example-row {
+  display: flex;
+  align-items: center;
+  justify-content: space-between;
+  gap: 1em;
+  padding: 0.9em 1em;
+  margin: 0.4em;
+  border: 2px solid rgba(77, 77, 77, 0.35);
+  border-radius: 10px;
+  background-color: rgba(36, 36, 36, 0.3);
+  cursor: pointer;
+  transition:
+    border-color 0.2s ease,
+    transform 0.15s ease;
+}
+
+.example-row:hover {
+  border-color: rgba(63, 244, 151, 0.7);
+  transform: translateY(-1px);
+}
+
+.example-row .example-meta h4 {
+  font-size: 17px;
+  font-weight: 600;
+  margin-bottom: 0.35em;
+}
+
+.example-row .example-meta .example-lang {
+  color: #3df39b;
+  font-size: 15px;
+}
+
+.example-row .example-stacks {
+  flex-shrink: 0;
+  font-size: 13px;
+  color: #c7c7c7;
+  border: 1px solid rgba(126, 99, 221, 0.7);
+  border-radius: 20px;
+  padding: 0.3em 0.8em;
+  white-space: nowrap;
+}
+
+.examples-empty {
+  padding: 2em;
+  text-align: center;
+  color: #9a9a9a;
+}

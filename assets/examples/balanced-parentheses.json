@@ -1,0 +1,18 @@
+{
+  "name": "Balanced parentheses",
+  "lang": "\\{w \\in \\{(,)\\}^* \\mid w \\text{ is balanced}\\}",
+  "samples": ["", "()", "(())", "(())()", "())("],
+  "stacks": 1,
+  "alphabet": ["(", ")"],
+  "aux_alphabet": ["X"],
+  "states": [
+    {
+      "id": 0,
+      "rules": [
+        { "q": 0, "X": "(", "Y": [-1], "W": ["X"] },
+        { "q": 0, "X": ")", "Y": ["X"], "W": [-1] },
+        { "q": -1, "X": -2, "Y": [-2], "W": [-1] }
+      ]
+    }
+  ]
+}

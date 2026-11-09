@@ -1,0 +1,49 @@
+/* Window chrome for the frameless window. */
+
+.title-bar {
+  display: flex;
+  align-items: center;
+  justify-content: space-between;
+  background-color: #161616;
+  color: white;
+  height: 40px;
+  -webkit-user-select: none; /* Prevent text selection */
+  -webkit-app-region: drag; /* Makes the title bar draggable */
+  padding-left: 15px;
+}
+
+.title-bar-title {
+  font-size: 14px;
+  display: flex;
+  align-items: center;
+  height: 40px;
+}
+
+.title-bar-icon {
+  height: 20px;
+  width: 20px;
+  margin-right: 10px;
+  -webkit-user-drag: none;
+}
+
+.title-bar-controls {
+  display: flex;
+}
+
+.title-bar-controls button {
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  background: none;
+  border: none;
+  color: white;
+  font-size: 16px;
+  height: 40px !important;
+  aspect-ratio: 1 !important;
+  cursor: pointer;
+  -webkit-app-region: no-drag; /* Prevent buttons from being draggable */
+}
+
+.title-bar-controls button:hover {
+  background-color: #1e1e1e;
+}

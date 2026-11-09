@@ -1,0 +1,1 @@
+{"stacks":1,"alphabet":["a","b","c"],"aux_alphabet":[],"states":[{"rules":[{"X":"a","Y":[-1],"q":"0","W":[-1]}],"id":0}],"lang":"a^nb^n"}

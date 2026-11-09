@@ -1,0 +1,477 @@
+.mainExecContainer {
+  width: 100vw;
+  height: calc(100vh - 40px);
+  display: grid;
+  grid-template-columns: repeat(3, minmax(max-content, 1fr));
+  background-color: rgb(12, 12, 12);
+  color: white;
+}
+.execControl {
+  margin: 4em 0em;
+  display: flex;
+  z-index: 100;
+  flex-direction: column;
+  max-width: 33vw;
+  padding: 0em 2em;
+  border-right: 2px solid #1c1c1c;
+}
+
+.inputString {
+  margin: 1em 0em;
+  border-radius: 20px;
+  box-shadow: 0px 0 31px 0px rgb(0 0 0 / 10%);
+  backdrop-filter: blur(3px);
+  max-width: 100%;
+  font-size: 19px;
+  padding-top: 0.4em;
+  border-radius: 10px;
+  overflow-x: auto;
+  display: flex;
+  border-radius: 5px;
+  width: 100%;
+}
+
+.inputString::-webkit-scrollbar-track {
+  background-color: #343434;
+  border-radius: 10px;
+  margin: 0em 1px;
+}
+
+.inputString div {
+  min-width: 45px;
+  flex-basis: 45px;
+  height: 45px;
+  display: flex;
+  border: 2px solid rgba(77, 77, 77, 0.5);
+  justify-content: center;
+  position: relative;
+  align-items: center;
+  font-family: 'Roboto Mono', Cambria, Cochin, Georgia, Times, 'Times New Roman',
+    serif;
+}
+
+.inputString div:not(:last-child) {
+  border-right: 2px solid rgba(77, 77, 77, 0.5);
+}
+
+.inputString div:last-child {
+  border-radius: 0px 5px 5px 0px;
+}
+.inputString div:first-child {
+  border-radius: 5px 0px 0px 5px;
+}
+
+.inputString .tapeHead {
+  background-color: #c7c7c752;
+  position: relative;
+}
+
+.inputString .tapeHead::before {
+  content: '\25B2';
+  font-family: 'Outfit', 'Courier New', Courier, monospace !important  ;
+  font-size: 25px;
+  color: #3df39b;
+  position: absolute;
+  left: 50%;
+  transform: translate(-50%, 0) rotate(180deg);
+  top: -18px;
+}
+
+.execControl .execDefinition {
+  font-family: 'Roboto Mono', Cambria, Cochin, Georgia, Times, 'Times New Roman';
+  display: flex;
+  flex-direction: column;
+}
+
+.execDefinition .items {
+  display: flex;
+  align-items: center;
+  margin-bottom: 20px;
+}
+
+.execDefinition .items .logo {
+  background-color: rgb(240, 240, 240);
+  width: 45px;
+  height: 45px;
+  color: black;
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  border-radius: 50%;
+  margin-right: 10px;
+}
+
+.execDefinition .items .itemInfo h4 {
+  font-size: 15px;
+  font-weight: 400;
+  color: #bebebe;
+}
+
+.execControl .execControlButtons {
+  display: flex;
+  flex-direction: column;
+  margin-top: auto;
+}
+.execControlButtons .it1 {
+  display: grid;
+  grid-template-columns: repeat(3, 1fr);
+  column-gap: 10px;
+}
+
+.execControlButtons .it1 > button {
+  border: 2px solid #b0b0b0;
+  background-color: transparent;
+  color: #b0b0b0;
+  font-weight: 400;
+  outline: none;
+  padding: 0.8em;
+  height: max-content;
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  font-size: 15px;
+  border-radius: 10px;
+  font-family: 'Outfit', 'Courier New', Courier, monospace !important  ;
+  cursor: pointer;
+  transition: 100ms all ease-in-out;
+}
+
+.execControlButtons .it1 button:active {
+  background-color: #d4d4d4;
+  color: #1c1c1c;
+  transform: scale(1.05);
+}
+
+.execControlButtons .it1 button:hover {
+  transform: scale(1.05);
+}
+
+.execControlButtons .it2 {
+  display: flex;
+  margin: 1em 0em;
+}
+
+.execControlButtons .it2 input[type='text'] {
+  background-color: transparent;
+  color: white;
+  border: 2px solid #b0b0b0;
+  font-size: 16px;
+  flex-grow: 1;
+  border-radius: 10px;
+  outline: none;
+  padding: 0.9em 1em;
+  margin-right: 10px;
+  font-family: 'Outfit', 'Courier New', Courier, monospace !important  ;
+}
+.execControlButtons .it2 input[type='button'] {
+  background-color: #d5d5d5;
+  color: rgb(0, 0, 0);
+  font-weight: 400;
+  outline: none;
+  border: none;
+  padding: 0.8em;
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  font-size: 15px;
+  border-radius: 10px;
+  font-family: 'Outfit', 'Courier New', Courier, monospace !important  ;
+  cursor: pointer;
+  transition: 100ms all ease-in-out;
+  height: 100%;
+  aspect-ratio: 1;
+}
+
+.execControlButtons .it2 input[type='button']:hover {
+  transform: scale(1.05);
+}
+
+.execControlButtons .it3 {
+  display: grid;
+  grid-template-columns: 1fr 1fr;
+  column-gap: 10px;
+}
+
+.execControlButtons .it3 > button {
+  background-color: #3df39b;
+  font-family: 'Outfit', 'Courier New', Courier, monospace !important  ;
+  padding: 1em 2em;
+  outline: none;
+  border: none;
+  font-weight: 500;
+  align-self: end;
+  box-shadow: 0px 0px 10px 0px rgba(63, 244, 151, 0.5);
+  cursor: pointer;
+  border-radius: 10px;
+  transition: 200ms all ease-in-out;
+}
+
+.execControlButtons .it3 > button:hover {
+  transform: scale(1.05);
+}
+
+.execControlButtons .it3 > button:active {
+  transform: scale(1.05);
+  background-color: #7e63dd;
+  color: whitesmoke;
+}
+
+.execControlButtons .it2 input[type='button']:active {
+  background-color: #d7d7d7;
+  transform: scale(1.02);
+}
+
+.execDefinition .var {
+  flex-direction: row-reverse;
+}
+
+.execDefinition .var:not(:first-child) {
+  margin-top: 1em;
+}
+
+.execDefinition .var .icon {
+  margin-left: 0px;
+}
+
+.execDefinition .var .varInfo {
+  align-items: start;
+  margin-left: 14px;
+}
+
+.execDefinition .var .varInfo h4 {
+  font-weight: 600;
+  font-size: 15px;
+}
+
+.execDefinition .var .varInfo span {
+  color: #ababab;
+}
+
+.execDefinition .var::before {
+  background-color: transparent !important;
+  border: none;
+  content: none;
+}
+
+.execStates {
+  margin: 4em 0em;
+  padding: 0em 2em;
+  border-right: 2px solid #1c1c1c;
+  z-index: 100;
+  max-width: 33vw;
+  overflow-y: auto;
+}
+
+.execStates .state {
+  padding: 1em;
+  box-sizing: border-box;
+  margin: 1em 0em;
+  margin-left: 1.5em;
+  background-color: rgba(36, 36, 36, 0.075);
+  box-shadow: 0px 0 31px 0px rgb(0 0 0 / 10%);
+  backdrop-filter: blur(3px);
+  border: 2px solid rgba(77, 77, 77, 0.5);
+  font-size: 19px;
+  display: flex;
+  flex-direction: column;
+  border-radius: 10px;
+  z-index: 1000;
+}
+
+.execStates .state .rules {
+  display: flex;
+  flex-direction: column;
+}
+
+.execStates .state .rule {
+  background-color: #39393957;
+  border-radius: 10px;
+  height: 40px;
+  box-sizing: border-box;
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  padding: 1em 40px;
+  font-size: 15px;
+  margin-left: 20px;
+  position: relative;
+}
+
+.state .rule:not(:first-child) {
+  margin-top: 1em;
+}
+
+.state .stateTitle {
+  border: 2px solid rgba(77, 77, 77, 0.5);
+  background-color: rgb(20, 20, 20);
+  box-shadow: 0px 0 31px 0px rgb(0 0 0 / 10%);
+  width: 50px;
+  height: 50px;
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  border-radius: 50%;
+  position: absolute;
+  left: -25px;
+  top: 50%;
+  transform: translate(0, -50%);
+}
+
+.leader-line {
+  z-index: 1000;
+}
+
+.active-rule {
+  background-color: #3df39b !important;
+  color: #1c1c1c;
+}
+
+.active-state {
+  background-color: #39393957;
+  box-sizing: border-box !important;
+}
+
+.active-state .stateTitle {
+  background-color: #3df39b;
+  border: 2px solid #3df39b;
+  box-shadow: 0px 0px 10px 0px rgba(63, 244, 151, 0.5);
+  color: #1c1c1c;
+}
+
+.execStacks {
+  margin: 4em 0em;
+  padding: 0em 2em;
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+  z-index: 100;
+  max-width: 33vw;
+  overflow-x: auto;
+  overflow-y: hidden;
+  position: relative;
+}
+
+.execStacks h2 {
+  background-color: rgb(12, 12, 12);
+  position: fixed;
+}
+
+.execControl h2 {
+  text-align: center;
+  align-items: center;
+  justify-content: center;
+  display: flex;
+}
+
+.execControl h2 > .accepted {
+  margin-left: 10px;
+  background-color: #5ffdb1;
+  color: #1c1c1c;
+  box-shadow: 0px 0px 15px 0px rgba(123, 245, 182, 0.5);
+  padding: 0.5em 1em;
+  border-radius: 10px;
+  font-size: 20px;
+  display: flex;
+  align-items: center;
+  font-family: 'Oxanium' !important;
+}
+
+.execControl h2 > .rejected {
+  margin-left: 10px;
+  background-color: #fd5f5f;
+  color: #1c1c1c;
+  box-shadow: 0px 0px 15px 0px rgba(245, 123, 123, 0.5);
+  padding: 0.5em 1em;
+  border-radius: 10px;
+  font-size: 20px;
+  display: flex;
+  align-items: center;
+  font-family: 'Oxanium' !important;
+}
+
+.execStates h2 {
+  text-align: center;
+}
+
+.execStacks .stackContainer {
+  margin-top: 60px;
+  width: max-content;
+  display: flex;
+  justify-content: center;
+  align-items: start;
+  flex-grow: 1;
+}
+
+.execStacks .stack {
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+  margin: 0em 1em;
+}
+
+.stack h3 {
+  margin-bottom: 0.7em;
+}
+
+.execStacks .stackBody {
+  display: flex;
+  flex-direction: column;
+  background-color: rgba(36, 36, 36, 0.075);
+  box-shadow: 0px 0 31px 0px rgb(0 0 0 / 10%);
+  backdrop-filter: blur(3px);
+  border: 2px solid rgba(77, 77, 77, 0.5);
+  border-radius: 10px;
+  width: max-content;
+}
+
+.execStacks .stackBody .stackHead {
+  background-color: #343434;
+  border-radius: 7px 7px 0px 0px;
+}
+
+.execStacks .stackBody div {
+  width: 50px;
+  height: 50px;
+  display: flex;
+  justify-content: center;
+  align-items: center;
+}
+
+.execStacks .stackBody div:not(:last-child) {
+  border-bottom: 2px solid #343434;
+}
+
+.execStates::-webkit-scrollbar {
+  display: none; /* Safari and Chrome */
+}
+
+.final-state {
+  margin-top: 2em !important;
+  background-color: transparent !important;
+  border: none !important;
+}
+
+.final-state .stateTitle {
+  top: 50% !important;
+  left: 50%;
+  transform: translate(-50%, -50%) !important;
+}
+
+.disabled_button {
+  background-color: #343434 !important;
+  box-shadow: none !important;
+  color: whitesmoke !important;
+  cursor: default !important;
+}
+
+.disabled_button:hover {
+  transform: none !important;
+}
+
+.execDefinition .execLang {
+  background-color: #1c1c1c;
+  max-width: max-content;
+  padding: 0.4em;
+  border-radius: 10px;
+  font-size: 20px;
+}
